@@ -1,0 +1,28 @@
+<div class="home-container">
+    <div class="categories" >
+      <div class="categories__header">
+        <h2>Customers</h2>
+      </div>
+<!-- src/app/components/user-list/user-list.component.html -->
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr *ngFor="let allcus of allcustomers; let i = index">
+              <td>{{ i + 1 }}</td>               <!-- Incrementing ID -->
+              <td>{{ allcus.username }}</td>      <!-- Username -->
+              <td>{{ allcus.email }}</td>         <!-- Email -->
+              <td>{{ allcus.role }}</td>          <!-- Role -->
+            </tr>
+          </tbody>
+    </table>
+  </div>
+  
+  </div>
