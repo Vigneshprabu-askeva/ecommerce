@@ -45,10 +45,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const { role } = this._token.getUser();
-    this.role = role;
-    if (this._token.getUser()) this.isLoggedIn = true;
-    else this.isLoggedIn = false;
+    if (this._token.getUser()){
+      const { role } = this._token.getUser();
+      this.role = role;
+      this.isLoggedIn = true;
+    } 
+    else{ this.isLoggedIn = false;}
   }
 
   toggleMenu() {

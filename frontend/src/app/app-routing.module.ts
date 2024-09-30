@@ -14,7 +14,7 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,canActivate: [AuthGuardService], },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {

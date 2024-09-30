@@ -78,3 +78,11 @@
     width: 100%;
   }
 }
+
+.ant-btn[disabled], .ant-btn[disabled]:active, .ant-btn[disabled]:focus, .ant-btn[disabled]:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.85);
+  border-color: #d9d9d9;
+  text-shadow: none;
+  box-shadow: none;
+}

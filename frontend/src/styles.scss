@@ -44,3 +44,29 @@ ul {
 .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 4px;
 }
+
+
+.ant-btn {
+  position: relative;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .015);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  -webkit-user-select: none;
+  user-select: none;
+  height: 32px;
+  padding: 4px 15px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.85);
+  color:#fff;
+}
+
+.ant-btn[disabled], .ant-btn[disabled]:active, .ant-btn[disabled]:focus, .ant-btn[disabled]:hover {
+  color: #fff;
+  background: rgb(0 0 0 / 56%);
+  border-color: #d9d9d9;
+  text-shadow: none;
+  box-shadow: none;
+}

@@ -37,7 +37,7 @@
     </div>
   </div>
   <!-- SECOND STEP -->
-  <div *ngIf="currentStep === 2">
+  <!-- <div *ngIf="currentStep === 2">
     <div class="payment-container">
       <h2>Payment Details</h2>
       <form>
@@ -96,9 +96,9 @@
         Continue
       </button>
     </div>
-  </div>
+  </div> -->
   <!-- THIRD STEP -->
-  <div *ngIf="currentStep === 3">
+  <div *ngIf="currentStep === 2">
     <div class="summary-container">
       <div class="summary-container__order">
         <h2>Order Summary</h2>
@@ -106,7 +106,7 @@
           <div><span>Item(s)</span> {{ cartData.products.length }}</div>
           <div><span>Payment method</span> Credit</div>
           <div>
-            <span>Order total</span> {{ cartData.total | currency: "USD" }}
+            <span>Order total</span> {{ cartData.total | currency: "INR" }}
           </div>
         </div>
         <button
@@ -129,8 +129,8 @@
               {{ item.title }}
             </div>
             <div class="item-total">
-              {{ item.price | currency: "USD" }} x {{ item.quantity }} =
-              {{ item.quantity * item.price | currency: "USD" }}
+              {{ item.price | currency: "INR" }} x {{ item.quantity }} =
+              {{ item.quantity * item.price | currency: "INR" }}
             </div>
           </div>
         </div>
@@ -163,8 +163,8 @@
               {{ item.title }}
             </div>
             <div class="item-total">
-              {{ item.price | currency: "USD" }} x {{ item.quantity }} =
-              {{ item.quantity * item.price | currency: "USD" }}
+              {{ item.price | currency: "INR" }} x {{ item.quantity }} =
+              {{ item.quantity * item.price | currency: "INR" }}
             </div>
           </div>
         </div>

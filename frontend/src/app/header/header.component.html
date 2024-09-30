@@ -7,7 +7,7 @@
       (click)="toggleMenu()"
       nzShape="circle"
       nzSize="large"
-    >
+     *ngIf="isLoggedIn">
       <i
         nz-icon
         nzType="menu"
@@ -16,7 +16,7 @@
     </button>
   </div>
   <div class="header-container__middle">
-    <h3 routerLink="/">eCommerce {{' - '+role | uppercase}}</h3>
+    <h3 routerLink="/">eCommerce {{ ' - ' + (role | uppercase) }}</h3>
   </div>
   <div class="header-container__right">
     <ng-container>
@@ -74,7 +74,7 @@
                     <div class="product-name">{{ product.title }}</div>
                     <div class="product-amount">
                       {{ product.quantity }} x
-                      <span>{{ product.price | currency: "USD" }}</span>
+                      <span>{{ product.price | currency: "INR" }}</span>
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@
                 {{ cartData.products.length }} Item(s) selected
               </div>
               <div class="total-price">
-                Total: {{ cartData.total | currency: "USD" }}
+                Total: {{ cartData.total | currency: "INR" }}
               </div>
             </div>
             <div class="cart-cta">
@@ -129,16 +129,19 @@
   <div class="side-menu__content">
     <h2 routerLink="/" (click)="toggleMenu()">eCommerce</h2>
     <nav>
-      <ul>
+      <ul *ngIf="role === 'user'">
         <li routerLink="/" (click)="toggleMenu()">Home</li>
-        <li *ngIf="role === 'user'" routerLink="/cart" (click)="toggleMenu()">Cart</li>
-        <li *ngIf="role === 'user'" routerLink="/profile" (click)="toggleMenu()">Profile</li>
-        <li *ngIf="role === 'user'" routerLink="/order-history" (click)="toggleMenu()">
-          Order History
-        </li>
-        <li *ngIf="role === 'admin'" routerLink="/customers" (click)="toggleMenu()">Customers</li>
-        <li *ngIf="role === 'admin'" routerLink="/all-products" (click)="toggleMenu()">Products</li>
-        <li *ngIf="role === 'admin'" routerLink="/order-history" (click)="toggleMenu()">  Order History</li>
+      <li  routerLink="/cart" (click)="toggleMenu()">Cart</li>
+      <li  routerLink="/profile" (click)="toggleMenu()">Profile</li>
+      <li  routerLink="/order-history" (click)="toggleMenu()">
+        Order History
+      </li>
+    </ul>
+      <ul *ngIf="role === 'admin'">
+        <li routerLink="/" (click)="toggleMenu()">Home</li>
+        <li  routerLink="/customers" (click)="toggleMenu()">Customers</li>
+        <li routerLink="/all-products" (click)="toggleMenu()">Products</li>
+        <li routerLink="/order-history" (click)="toggleMenu()">  Order History</li>
       </ul>
     </nav>
     <div class="">
